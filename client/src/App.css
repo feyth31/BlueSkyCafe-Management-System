@@ -1,0 +1,843 @@
+
+/* =========================
+   BLUESKY CAFE THEME
+   Deep Teal + Cyan
+========================= */
+
+:root {
+  --deep-teal: #164E63;
+  --deep-teal-dark: #103B4B;
+  --primary-cyan: #0891B2;
+  --bright-cyan: #06B6D4;
+  --light-cyan: #ECFEFF;
+  --page-background: #F1F8FA;
+  --white: #FFFFFF;
+  --text-dark: #1E293B;
+  --text-muted: #64748B;
+  --border-color: #DCE7EC;
+  --danger: #DC2626;
+  --success: #15803D;
+}
+
+/* Global Reset */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  width: 100%;
+  min-height: 100vh;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background: var(--page-background);
+  color: var(--text-dark);
+  margin: 0;
+}
+
+/* Main Layout */
+
+.app-layout {
+  display: flex;
+  width: 100%;
+  min-height: 100vh;
+  align-items: stretch;
+}
+
+/* Sidebar */
+
+.sidebar {
+  width: 250px;
+  min-width: 250px;
+  min-height: 100vh;
+  background: var(--deep-teal);
+  color: white;
+  padding: 28px 18px;
+  box-shadow: 4px 0 18px rgba(22, 78, 99, 0.12);
+  flex-shrink: 0;
+}
+
+/* BSC Sidebar Logo */
+
+.sidebar-brand {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 30px;
+  padding: 10px 0;
+}
+
+.sidebar-logo {
+  width: 100%;
+  max-width: 190px;
+  height: auto;
+  object-fit: contain;
+  display: block;
+}
+
+/* Sidebar Navigation */
+
+.sidebar nav {
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+}
+
+.sidebar nav a {
+  text-decoration: none;
+  color: #D8F0F5;
+  padding: 13px 15px;
+  border-radius: 10px;
+  transition: 0.2s ease;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.sidebar nav a:hover {
+  background: rgba(6, 182, 212, 0.16);
+  color: white;
+  transform: translateX(3px);
+}
+
+.sidebar nav a.active {
+  background: var(--primary-cyan);
+  color: white;
+  box-shadow: 0 4px 12px rgba(6, 182, 212, 0.25);
+}
+
+/* Main Content */
+
+.main-content {
+  flex: 1;
+  width: 0;
+  min-width: 0;
+  padding: 35px;
+  box-sizing: border-box;
+}
+
+/* Page Headings */
+
+.page h1 {
+  margin-bottom: 10px;
+  font-size: 29px;
+  color: var(--deep-teal);
+  font-weight: 700;
+}
+
+.page p {
+  color: var(--text-muted);
+  margin-bottom: 25px;
+  line-height: 1.6;
+}
+
+/* Dashboard Cards */
+
+.dashboard-cards {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 20px;
+  width: 100%;
+}
+
+.dashboard-card {
+  background: var(--white);
+  padding: 25px;
+  border-radius: 16px;
+  border: 1px solid #E4EEF2;
+  box-shadow: 0 5px 18px rgba(22, 78, 99, 0.06);
+  transition: 0.2s ease;
+  position: relative;
+  overflow: hidden;
+  min-width: 0;
+}
+
+.dashboard-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 25px rgba(22, 78, 99, 0.12);
+}
+
+.dashboard-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background: var(--primary-cyan);
+}
+
+.dashboard-card h3 {
+  color: var(--text-muted);
+  font-size: 14px;
+  margin-bottom: 15px;
+  font-weight: 600;
+}
+
+.dashboard-card h2 {
+  font-size: 29px;
+  color: var(--deep-teal);
+}
+
+/* Tables */
+
+.product-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: var(--white);
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(22, 78, 99, 0.05);
+}
+
+.product-table th,
+.product-table td {
+  padding: 16px;
+  text-align: left;
+  border-bottom: 1px solid var(--border-color);
+  font-size: 14px;
+}
+
+.product-table th {
+  background: var(--light-cyan);
+  color: var(--deep-teal);
+  font-weight: 700;
+}
+
+.product-table tr:hover td {
+  background: #F8FEFF;
+}
+
+.product-table tr:last-child td {
+  border-bottom: none;
+}
+
+/* Product Forms and Lists */
+
+.product-form-container,
+.product-list-container {
+  background: var(--white);
+  padding: 27px;
+  border-radius: 16px;
+  margin-bottom: 25px;
+  border: 1px solid #E4EEF2;
+  box-shadow: 0 5px 18px rgba(22, 78, 99, 0.06);
+  width: 100%;
+}
+
+.product-form-container h2,
+.product-list-container h2 {
+  color: var(--deep-teal);
+  font-size: 21px;
+  margin-bottom: 20px;
+}
+
+/* Form Layout */
+
+.product-form {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 20px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.form-group label {
+  font-weight: 600;
+  font-size: 14px;
+  color: var(--deep-teal);
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+  width: 100%;
+  padding: 13px 14px;
+  border: 1px solid var(--border-color);
+  border-radius: 9px;
+  background: #FCFEFF;
+  color: var(--text-dark);
+  font-family: Arial, sans-serif;
+  font-size: 14px;
+  transition: 0.2s ease;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: var(--primary-cyan);
+  box-shadow: 0 0 0 3px rgba(8, 145, 178, 0.13);
+  background: white;
+}
+
+.full-width {
+  grid-column: 1 / -1;
+}
+
+/* Buttons */
+
+.add-product-btn {
+  background: var(--primary-cyan);
+  color: white;
+  padding: 13px 22px;
+  border: none;
+  border-radius: 9px;
+  cursor: pointer;
+  font-weight: bold;
+  width: fit-content;
+  transition: 0.2s ease;
+}
+
+.add-product-btn:hover {
+  background: var(--deep-teal);
+  transform: translateY(-1px);
+  box-shadow: 0 5px 12px rgba(8, 145, 178, 0.2);
+}
+
+.delete-btn {
+  background: #FEE2E2;
+  color: var(--danger);
+  padding: 8px 13px;
+  border: 1px solid #FECACA;
+  border-radius: 7px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: 0.2s ease;
+}
+
+.delete-btn:hover {
+  background: var(--danger);
+  color: white;
+}
+
+/* Messages */
+
+.message {
+  margin-top: 15px;
+  color: var(--deep-teal);
+  font-weight: bold;
+}
+
+/* Inventory Status */
+
+.low-stock {
+  background: #FEE2E2;
+  color: #B91C1C;
+  padding: 6px 11px;
+  border-radius: 20px;
+  font-size: 13px;
+  font-weight: bold;
+}
+
+.in-stock {
+  background: #DCFCE7;
+  color: #166534;
+  padding: 6px 11px;
+  border-radius: 20px;
+  font-size: 13px;
+  font-weight: bold;
+}
+
+/* Responsive Design */
+
+@media (max-width: 1100px) {
+  .dashboard-cards {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 900px) {
+  .sidebar {
+    width: 200px;
+    min-width: 200px;
+  }
+
+  .main-content {
+    padding: 25px;
+  }
+}
+
+@media (max-width: 700px) {
+  .app-layout {
+    flex-direction: column;
+  }
+
+  .sidebar {
+    width: 100%;
+    min-width: 100%;
+    min-height: auto;
+  }
+
+  .sidebar nav {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .main-content {
+    width: 100%;
+    padding: 20px;
+  }
+
+  .dashboard-cards {
+    grid-template-columns: 1fr;
+  }
+
+  .product-form {
+    grid-template-columns: 1fr;
+  }
+
+  .full-width {
+    grid-column: auto;
+  }
+
+  .product-form-container,
+  .product-list-container {
+    padding: 20px;
+  }
+
+  .product-table {
+    display: block;
+    overflow-x: auto;
+    white-space: nowrap;
+  }
+}
+
+
+/* =========================
+   BLUESKY CAFE LOGIN PAGE
+   Dark Forest Green Theme
+========================= */
+
+.login-page {
+  min-height: 100vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 35px;
+  background: #062f20;
+  position: relative;
+  overflow: hidden;
+  font-family: Arial, sans-serif;
+}
+
+/* Background Decorations */
+
+.login-page::before {
+  content: "";
+  position: absolute;
+  width: 600px;
+  height: 600px;
+  border-radius: 50%;
+  background: #0c4b32;
+  top: -350px;
+  left: -200px;
+  opacity: 0.65;
+}
+
+.login-page::after {
+  content: "";
+  position: absolute;
+  width: 500px;
+  height: 500px;
+  border-radius: 50%;
+  background: #0c4b32;
+  bottom: -350px;
+  right: -150px;
+  opacity: 0.6;
+}
+
+/* Main Login Card */
+
+.login-card {
+  width: 100%;
+  max-width: 1100px;
+  min-height: 680px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  background: #f5efe3;
+  border: 1px solid #d8b98a;
+  border-radius: 18px;
+  overflow: hidden;
+  position: relative;
+  z-index: 1;
+  box-shadow: 0 25px 70px rgba(0, 0, 0, 0.3);
+}
+
+/* Left Login Section */
+
+.login-form-section {
+  padding: 55px 65px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background: #f5efe3;
+}
+
+/* Brand */
+
+.login-brand {
+  margin-bottom: 55px;
+}
+
+.brand-icon {
+  font-size: 30px;
+  margin-bottom: 10px;
+}
+
+.login-brand h1 {
+  color: #063b27;
+  font-size: 28px;
+  font-weight: 700;
+  letter-spacing: -1px;
+}
+
+.login-brand p {
+  color: #71806e;
+  font-size: 12px;
+  margin-top: 6px;
+  letter-spacing: 1px;
+}
+
+/* Welcome Heading */
+
+.login-heading {
+  text-align: center;
+  margin-bottom: 35px;
+}
+
+.login-heading h2 {
+  color: #063b27;
+  font-size: 36px;
+  margin-bottom: 12px;
+  font-weight: 700;
+  letter-spacing: -1px;
+}
+
+.login-heading p {
+  color: #6c786b;
+  font-size: 14px;
+}
+
+/* Login Form */
+
+.login-form {
+  width: 100%;
+}
+
+.login-input-group {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 22px;
+}
+
+.login-input-group label {
+  color: #174b34;
+  font-size: 13px;
+  font-weight: 600;
+  margin-bottom: 9px;
+}
+
+.login-input-group input {
+  width: 100%;
+  padding: 14px 15px;
+  border: 1.5px solid #174b34;
+  border-radius: 9px;
+  background: #fffaf1;
+  color: #163c2b;
+  font-size: 14px;
+  outline: none;
+  transition: 0.2s ease;
+}
+
+.login-input-group input::placeholder {
+  color: #9b9d8f;
+}
+
+.login-input-group input:focus {
+  border-color: #087443;
+  box-shadow: 0 0 0 3px rgba(8, 116, 67, 0.12);
+}
+
+/* Password Field */
+
+.password-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.password-wrapper input {
+  padding-right: 65px;
+}
+
+.password-toggle {
+  position: absolute;
+  right: 12px;
+  background: transparent;
+  border: none;
+  color: #56745e;
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.password-toggle:hover {
+  color: #063b27;
+}
+
+.forgot-password {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 10px;
+}
+
+.forgot-password span {
+  color: #45644d;
+  font-size: 12px;
+  cursor: default;
+}
+
+/* Login Button */
+
+.login-button {
+  width: 100%;
+  padding: 15px;
+  margin-top: 10px;
+  border: none;
+  border-radius: 9px;
+  background: #075b35;
+  color: #ffffff;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.25s ease;
+}
+
+.login-button:hover {
+  background: #034526;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 15px rgba(7, 91, 53, 0.2);
+}
+
+.login-button:disabled {
+  background: #7b9583;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}
+
+/* Error Message */
+
+.login-error {
+  color: #b42318;
+  background: #fce8e6;
+  border: 1px solid #f5c2bd;
+  padding: 11px;
+  border-radius: 8px;
+  font-size: 13px;
+  margin-bottom: 12px;
+}
+
+/* Divider */
+
+.login-divider {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin: 30px 0 20px;
+}
+
+.login-divider span {
+  flex: 1;
+  height: 1px;
+  background: #9baa91;
+}
+
+.login-divider p {
+  color: #55705a;
+  font-size: 12px;
+  white-space: nowrap;
+}
+
+/* Login Footer */
+
+.login-footer {
+  text-align: center;
+  color: #788573;
+  font-size: 12px;
+  margin-top: 10px;
+}
+
+/* Right Café Section */
+
+.login-art-section {
+  min-height: 100%;
+  background: #0a3a27;
+  border-left: 1px solid #174b34;
+  overflow: hidden;
+}
+
+/* Café Art Background */
+
+.cafe-art {
+  height: 100%;
+  min-height: 680px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 35px;
+  color: #f5efe3;
+  overflow: hidden;
+  background:
+    radial-gradient(
+      circle at 50% 45%,
+      rgba(216, 185, 138, 0.12),
+      transparent 55%
+    ),
+    #0a3a27;
+}
+
+/* Art Panel Labels */
+
+.art-top-label {
+  display: flex;
+  justify-content: space-between;
+  font-size: 10px;
+  letter-spacing: 2px;
+  color: #d8b98a;
+  z-index: 2;
+}
+
+/* Logo Display */
+
+.cafe-logo-display {
+  position: absolute;
+  width: 100%;
+  top: 45%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 2;
+}
+
+.cafe-logo-image {
+  width: 80%;
+  max-width: 350px;
+  height: auto;
+  object-fit: contain;
+  border-radius: 12px;
+  display: block;
+}
+
+/* Art Caption */
+
+.art-caption {
+  position: relative;
+  z-index: 2;
+  margin-top: auto;
+  padding-top: 350px;
+}
+
+.art-small-text {
+  color: #d8b98a;
+  font-size: 12px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin-bottom: 15px;
+}
+
+.art-caption h2 {
+  color: #f5efe3;
+  font-family: Georgia, serif;
+  font-size: 36px;
+  line-height: 1.2;
+  margin-bottom: 18px;
+}
+
+.art-caption > p:last-child {
+  color: #c7d5c8;
+  font-size: 13px;
+  line-height: 1.8;
+}
+
+/* Decorative Circles */
+
+.art-decoration {
+  position: absolute;
+  border: 1px solid rgba(216, 185, 138, 0.2);
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+.decoration-one {
+  width: 380px;
+  height: 380px;
+  top: 20%;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.decoration-two {
+  width: 450px;
+  height: 450px;
+  top: 15%;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+/* Responsive Login Page */
+
+@media (max-width: 900px) {
+  .login-page {
+    padding: 20px;
+  }
+
+  .login-card {
+    max-width: 600px;
+    grid-template-columns: 1fr;
+  }
+
+  .login-form-section {
+    padding: 45px;
+  }
+
+  .login-art-section {
+    display: none;
+  }
+
+  .login-brand {
+    margin-bottom: 35px;
+  }
+}
+
+@media (max-width: 500px) {
+  .login-page {
+    padding: 12px;
+  }
+
+  .login-card {
+    border-radius: 14px;
+  }
+
+  .login-form-section {
+    padding: 30px 22px;
+  }
+
+  .login-heading h2 {
+    font-size: 30px;
+  }
+}
